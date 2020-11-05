@@ -1,9 +1,8 @@
 package util
 
 import (
+	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"github.com/tcnksm/go-httpstat"
-	"grolimundSolutions.ch/syntheticMonitor/data"
-	_ "grolimundSolutions.ch/syntheticMonitor/data"
 	"io"
 	"io/ioutil"
 	"log"

@@ -2,7 +2,7 @@ package writer
 
 import (
 	"encoding/json"
-	"grolimundSolutions.ch/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"log"
 	"os"
 )

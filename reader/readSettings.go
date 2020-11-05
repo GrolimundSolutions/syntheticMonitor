@@ -2,7 +2,7 @@ package reader
 
 import (
 	"encoding/json"
-	"grolimundSolutions.ch/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"io/ioutil"
 	"log"
 	"os"

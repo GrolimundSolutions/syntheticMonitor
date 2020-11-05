@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"grolimundSolutions.ch/syntheticMonitor/data"
-	"grolimundSolutions.ch/syntheticMonitor/reader"
-	"grolimundSolutions.ch/syntheticMonitor/util"
+	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/reader"
+	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"log"
 )
 
@@ -12,7 +12,7 @@ func main() {
 
 	myChannel := make(chan data.ResponseObject)
 	var resObj = data.ResponseObjects{}
-	jsonData, err := reader.ReadFromJson("C:\\Users\\Achim\\go\\src\\grolimundSolutions.ch\\syntheticMonitor\\urlList.json")
+	jsonData, err := reader.ReadFromJson("urlList.json")
 	if err != nil {
 		log.Fatalln(err.Error())
 	}

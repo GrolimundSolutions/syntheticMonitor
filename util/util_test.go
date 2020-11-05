@@ -1,7 +1,7 @@
 package util
 
 import (
-	"grolimundSolutions.ch/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"testing"
 )
 
