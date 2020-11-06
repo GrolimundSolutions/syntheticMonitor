@@ -5,8 +5,57 @@ import (
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"github.com/GrolimundSolutions/syntheticMonitor/reader"
 	"github.com/GrolimundSolutions/syntheticMonitor/util"
+	"github.com/GrolimundSolutions/syntheticMonitor/writer"
 	"log"
+	"os"
+	"strings"
 )
+
+func init() {
+	defaultData := data.SyntheticSettings{
+		Location: "Swiss",
+		SyntheticUrls: []data.SyntheticUrls{
+			data.SyntheticUrls{
+				URL:    "https://google.ch",
+				Name:   "Google Swiss",
+				Expect: "In Progress",
+			},
+			data.SyntheticUrls{
+				URL:    "https://google.de",
+				Name:   "Google Germany",
+				Expect: "In Progress",
+			},
+		},
+	}
+
+	defaultPath := strings.Trim(util.GetDefaultConfigPath(), "urlList.json")
+
+	// Check if the defaultlocation exists
+	if _, err := os.Stat(defaultPath); os.IsNotExist(err) {
+		log.Println("Info default settings folder not exists")
+		err := os.MkdirAll(defaultPath, 0700)
+		log.Println("Info default settings folder created")
+		if err != nil {
+			panic(err.Error())
+		}
+		// Create a default file
+		err = writer.WriteToJson(&defaultData)
+		if err != nil {
+			panic(err.Error())
+		}
+		log.Println("Info default settings file created")
+	}
+	// Check if the file exists
+	if _, err := os.Stat(util.GetDefaultConfigPath()); os.IsNotExist(err) {
+		log.Println("Info default settings file not found")
+		// Create a default file
+		err = writer.WriteToJson(&defaultData)
+		if err != nil {
+			panic(err.Error())
+		}
+		log.Println("Info default settings file created")
+	}
+}
 
 func main() {
 

@@ -55,10 +55,10 @@ func Test_Count2(t *testing.T) {
 
 func TestGetDefaultConfigPath(t *testing.T) {
 	var myOs = "/etc/syntheticmonitor/urlList.json"
-	if runtime.GOOS == "windows"{
+	if runtime.GOOS == "windows" {
 		myOs = "\\ProgramData\\SyntheticMonitor\\urlList.json"
 	}
-	if GetDefaultConfigPath() != myOs{
+	if GetDefaultConfigPath() != myOs {
 		t.Fail()
 	}
 }
