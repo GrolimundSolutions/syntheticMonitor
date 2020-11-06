@@ -3,12 +3,14 @@ package reader
 import (
 	"encoding/json"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"io/ioutil"
 	"log"
 	"os"
 )
 
-func ReadFromJson(filePath string) (data.SyntheticSettings, error) {
+func ReadFromJson() (data.SyntheticSettings, error) {
+	filePath := util.GetDefaultConfigPath()
 	// Read JSON file to struct
 	var synset data.SyntheticSettings
 
