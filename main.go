@@ -12,7 +12,7 @@ func main() {
 
 	myChannel := make(chan data.ResponseObject)
 	var resObj = data.ResponseObjects{}
-	jsonData, err := reader.ReadFromJson("urlList.json")
+	jsonData, err := reader.ReadFromJson()
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
