@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"runtime"
 	"time"
 )
 
@@ -48,4 +49,14 @@ func SyntheticCall(urlObject data.SyntheticUrls, channel chan data.ResponseObjec
 		ServerProcessing: int16(result.ServerProcessing / time.Millisecond),
 		ContentTransfer:  int16(result.ContentTransfer(time.Now()) / time.Millisecond),
 	}
+
+}
+
+const windowsOS = "windows"
+
+func getDefaultConfigPath() string {
+	if runtime.GOOS == windowsOS {
+		return "\\ProgramData\\SyntheticMonitor\\urlList.json"
+	}
+	return "/etc/syntheticmonitor/urlList.json"
 }
