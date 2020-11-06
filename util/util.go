@@ -54,7 +54,7 @@ func SyntheticCall(urlObject data.SyntheticUrls, channel chan data.ResponseObjec
 
 const windowsOS = "windows"
 
-func getDefaultConfigPath() string {
+func GetDefaultConfigPath() string {
 	if runtime.GOOS == windowsOS {
 		return "\\ProgramData\\SyntheticMonitor\\urlList.json"
 	}
