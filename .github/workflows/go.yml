@@ -3,6 +3,8 @@ name: Go
 on:
   push:
     branches: [ master ]
+    tags:
+      - '*'
   pull_request:
     branches: [ master ]
 
@@ -34,3 +36,6 @@ jobs:
 
     - name: Test
       run: go test -v .
+
+    - name: Go Release Binary
+      uses: ngs/go-release.action@v1.0.2
