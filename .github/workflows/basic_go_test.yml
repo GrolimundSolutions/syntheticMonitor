@@ -39,6 +39,8 @@ jobs:
         # You may pin to the exact commit or the version.
         # uses: codecov/codecov-action@7d5dfa54903bd909319c580a00535b483d1efcf3
       uses: codecov/codecov-action@v1.0.14
+      if: success()
       with:
         # Repository upload token - get it from codecov.io. Required only for private repositories
         token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage/clover.xml
