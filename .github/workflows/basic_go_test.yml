@@ -30,10 +30,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v .
+      run: go build -v ./...
 
     - name: Test
-      run: go test -v .
-
-    - name: Go Release Binary
-      uses: ngs/go-release.action@v1.0.2
+      run: go test -v ./...
