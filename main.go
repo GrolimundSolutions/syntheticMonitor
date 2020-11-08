@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/pkg"
 	"github.com/GrolimundSolutions/syntheticMonitor/reader"
 	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"github.com/GrolimundSolutions/syntheticMonitor/writer"
@@ -79,4 +80,12 @@ func main() {
 		resObj.ResponseObject = append(resObj.ResponseObject, retItem)
 	}
 	fmt.Println(resObj)
+
+	var res pkg.Results
+	res = pkg.Result(resObj)
+	err = res.SendToHTTP("test.yaml")
+	if err != nil {
+		log.Fatalln(err.Error())
+	}
+
 }
