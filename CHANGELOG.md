@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Features
+- update README.md feat update config.yml
+
 
 <a name="0.0.1-1-beta"></a>
 ## [0.0.1-1-beta] - 2020-11-08
