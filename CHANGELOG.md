@@ -2,7 +2,8 @@
 ## [Unreleased]
 
 ### Features
-- update README.md feat update config.yml
+- update README.md
+- update README.md feat: update config.yml
 
 
 <a name="0.0.1-1-beta"></a>
