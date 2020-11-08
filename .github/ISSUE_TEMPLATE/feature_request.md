@@ -1,20 +1,27 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+<!-- Please replace {Please write here} with your description -->
 
----
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Expected Behavior
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+{Please write here}
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Actual Behavior
+
+{Please write here}
+
+
+## Steps to Reproduce (including precondition)
+
+{Please write here}
+
+
+## Screenshot on This Problem (if possible)
+
+{Please write here}
+
+
+## Your Environment
+
+- OS: {Please write here}
+- SyntheticMonitor version: {Please write here}
