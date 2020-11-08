@@ -7,7 +7,8 @@ import (
 	"os"
 )
 
-func WriteToJson(filePath *string, objectSchema *data.SyntheticSettings) error {
+// WriteToJSON write the Settings to an JSON file on a default path
+func WriteToJSON(filePath *string, objectSchema *data.SyntheticSettings) error {
 	// Write struct to JSON file
 	file, err := os.OpenFile(*filePath, os.O_CREATE, os.ModePerm)
 	if err != nil {

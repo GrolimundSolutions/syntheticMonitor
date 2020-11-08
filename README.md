@@ -6,4 +6,6 @@
   <a href="https://codecov.io/gh/GrolimundSolutions/syntheticMonitor">
     <img src="https://codecov.io/gh/GrolimundSolutions/syntheticMonitor/branch/master/graph/badge.svg?token=WNTU19RFJX"/>
   </a>
+  <a href="https://goreportcard.com/report/github.com/GrolimundSolutions/syntheticMonitor"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/GrolimundSolutions/syntheticMonitor"></a>
+  
 </p>

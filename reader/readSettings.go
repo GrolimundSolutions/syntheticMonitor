@@ -8,7 +8,10 @@ import (
 	"os"
 )
 
-func ReadFromJson(filePath string) (data.SyntheticSettings, error) {
+// ReadFromJSON read the Settings from a default path
+// Linux: /etc/syntheticmonitor/urlList.json
+// Windows: \\ProgramData\\SyntheticMonitor\\urlList.json
+func ReadFromJSON(filePath string) (data.SyntheticSettings, error) {
 	// Read JSON file to struct
 	var synset data.SyntheticSettings
 
