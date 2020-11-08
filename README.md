@@ -7,7 +7,9 @@
     <img src="https://codecov.io/gh/GrolimundSolutions/syntheticMonitor/branch/master/graph/badge.svg?token=WNTU19RFJX"/>
   </a>
   <a href="https://goreportcard.com/report/github.com/GrolimundSolutions/syntheticMonitor"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/GrolimundSolutions/syntheticMonitor"></a>
-  
+  <a href="#"> <img src="https://img.shields.io/badge/Made%20with-Go-1f425f.svg" alt="Go"></a>
+  <a href="https://github.com/GrolimundSolutions/syntheticMonitor/blob/master/LICENSE"> <img src="https://img.shields.io/github/license/GrolimundSolutions/SyntheticMonitor.svg" alt="Go"></a>
+  <a href=""> <img src="https://img.shields.io/github/commits-since/GrolimundSolutions/SyntheticMonitor/latest" alt="Go"></a>
 </p>
 
 <hr>
