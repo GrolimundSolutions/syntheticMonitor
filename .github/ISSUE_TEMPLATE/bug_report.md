@@ -1,38 +1,27 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+<!-- Please replace {Please write here} with your description -->
 
----
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Expected Behavior
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+{Please write here}
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## Actual Behavior
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+{Please write here}
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
 
-**Additional context**
-Add any other context about the problem here.
+## Steps to Reproduce (including precondition)
+
+{Please write here}
+
+
+## Screenshot on This Problem (if possible)
+
+{Please write here}
+
+
+## Your Environment
+
+- OS: {Please write here}
+- git-chglog version: {Please write here}
