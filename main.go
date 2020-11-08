@@ -61,7 +61,7 @@ func main() {
 
 	myChannel := make(chan data.ResponseObject)
 	var resObj = data.ResponseObjects{}
-	jsonData, err := reader.ReadFromJson()
+	jsonData, err := reader.ReadFromJSON()
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
