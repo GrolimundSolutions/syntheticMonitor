@@ -24,4 +24,4 @@
 ## Your Environment
 
 - OS: {Please write here}
-- git-chglog version: {Please write here}
+- SyntheticMonitor version: {Please write here}
