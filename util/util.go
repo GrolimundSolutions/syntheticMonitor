@@ -54,8 +54,10 @@ func SyntheticCall(urlObject data.SyntheticUrls, channel chan data.ResponseObjec
 
 }
 
+// windowsOS const for GOOS windows
 const windowsOS = "windows"
 
+// GetDefaultConfigPath returns the default path for the actual OS
 func GetDefaultConfigPath() string {
 	if runtime.GOOS == windowsOS {
 		return "\\ProgramData\\SyntheticMonitor\\urlList.json"
