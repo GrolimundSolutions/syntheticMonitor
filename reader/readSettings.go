@@ -3,6 +3,7 @@ package reader
 import (
 	"encoding/json"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"io/ioutil"
 	"log"
 	"os"
@@ -11,7 +12,8 @@ import (
 // ReadFromJSON read the Settings from a default path
 // Linux: /etc/syntheticmonitor/urlList.json
 // Windows: \\ProgramData\\SyntheticMonitor\\urlList.json
-func ReadFromJSON(filePath string) (data.SyntheticSettings, error) {
+func ReadFromJSON() (data.SyntheticSettings, error) {
+	filePath := util.GetDefaultConfigPath()
 	// Read JSON file to struct
 	var synset data.SyntheticSettings
 

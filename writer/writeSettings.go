@@ -3,14 +3,16 @@ package writer
 import (
 	"encoding/json"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"log"
 	"os"
 )
 
 // WriteToJSON write the Settings to an JSON file on a default path
-func WriteToJSON(filePath *string, objectSchema *data.SyntheticSettings) error {
+func WriteToJSON(objectSchema *data.SyntheticSettings) error {
+	filePath := util.GetDefaultConfigPath()
 	// Write struct to JSON file
-	file, err := os.OpenFile(*filePath, os.O_CREATE, os.ModePerm)
+	file, err := os.OpenFile(filePath, os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return err
 	}
