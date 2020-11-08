@@ -39,7 +39,7 @@ func init() {
 			panic(err.Error())
 		}
 		// Create a default file
-		err = writer.WriteToJson(&defaultData)
+		err = writer.WriteToJSON(&defaultData)
 		if err != nil {
 			panic(err.Error())
 		}
@@ -49,7 +49,7 @@ func init() {
 	if _, err := os.Stat(util.GetDefaultConfigPath()); os.IsNotExist(err) {
 		log.Println("Info default settings file not found")
 		// Create a default file
-		err = writer.WriteToJson(&defaultData)
+		err = writer.WriteToJSON(&defaultData)
 		if err != nil {
 			panic(err.Error())
 		}
