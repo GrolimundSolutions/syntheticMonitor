@@ -10,10 +10,12 @@ import (
 	"time"
 )
 
+// Count returns the count of url object
 func Count(data *data.SyntheticSettings) int {
 	return len(data.SyntheticUrls)
 }
 
+// SyntheticCall calls the website and generate the detail information
 func SyntheticCall(urlObject data.SyntheticUrls, channel chan data.ResponseObject) {
 	// Create a new HTTP request
 	req, err := http.NewRequest("GET", urlObject.URL, nil)
@@ -40,7 +42,7 @@ func SyntheticCall(urlObject data.SyntheticUrls, channel chan data.ResponseObjec
 	channel <- data.ResponseObject{
 		Name:             urlObject.Name,
 		URL:              urlObject.URL,
-		HttpStatus:       int16(res.StatusCode),
+		HTTPStatus:       int16(res.StatusCode),
 		TotalTime:        int16(timeTotal),
 		DNSLookup:        int16(result.DNSLookup / time.Millisecond),
 		TCPConnection:    int16(result.TCPConnection / time.Millisecond),
