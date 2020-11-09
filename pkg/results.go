@@ -74,7 +74,7 @@ func (r Result) WriteToJSON(path string) error {
 	return nil
 }
 
-// SendToHTTP dend the results to a url
+// SendToHTTP send the results to a url
 func (r Result) SendToHTTP(url string) error {
 	requestBody, err := json.Marshal(r)
 	if err != nil {
