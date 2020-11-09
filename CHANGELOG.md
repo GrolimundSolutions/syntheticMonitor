@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="0.0.2-beta"></a>
+## [0.0.2-beta] - 2020-11-09
 ### Features
 - finishing Method write to YAML
 - finishing Method write to JSON
@@ -21,6 +24,7 @@
 <a name="0.0.1-alpha"></a>
 ## 0.0.1-alpha - 2020-11-07
 
-[Unreleased]: https://github.com/GrolimundSolutions/syntheticMonitor/compare/0.0.1-1-beta...HEAD
+[Unreleased]: https://github.com/GrolimundSolutions/syntheticMonitor/compare/0.0.2-beta...HEAD
+[0.0.2-beta]: https://github.com/GrolimundSolutions/syntheticMonitor/compare/0.0.1-1-beta...0.0.2-beta
 [0.0.1-1-beta]: https://github.com/GrolimundSolutions/syntheticMonitor/compare/0.0.1-beta...0.0.1-1-beta
 [0.0.1-beta]: https://github.com/GrolimundSolutions/syntheticMonitor/compare/0.0.1-alpha...0.0.1-beta
