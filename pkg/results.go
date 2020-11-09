@@ -28,8 +28,10 @@ type Result data.ResponseObjects
 func (r Result) WriteToYAML(path string) error {
 
 	filePath := path
+	_time := time.Now()
+	filename := fmt.Sprintf("%s.yaml", _time.Format("2006-01-02_15-04-05"))
 	// Write struct to JSON file
-	file, err := os.OpenFile(filePath, os.O_CREATE, os.ModePerm)
+	file, err := os.OpenFile(filePath+filename, os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return err
 	}
@@ -50,8 +52,6 @@ func (r Result) WriteToYAML(path string) error {
 		log.Printf("err: %v\n", err)
 		return err
 	}
-
-	log.Println(string(y))
 	return nil
 }
 
@@ -60,7 +60,6 @@ func (r Result) WriteToJSON(path string) error {
 	filePath := path
 	_time := time.Now()
 	filename := fmt.Sprintf("%s.json", _time.Format("2006-01-02_15-04-05"))
-	log.Println("Filename:::", filename)
 	// Write struct to JSON file
 	file, err := os.OpenFile(filePath+filename, os.O_CREATE, os.ModePerm)
 	if err != nil {

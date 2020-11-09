@@ -90,9 +90,16 @@ func main() {
 			log.Fatalln(err.Error())
 		}
 	case "File":
-		log.Println("File")
-		log.Println(jsonData.FileLocation)
-		err = res.WriteToJSON(jsonData.FileLocation)
+		if jsonData.FileType == "yaml" {
+			log.Println("File::YAML")
+			log.Println(jsonData.FileLocation)
+			err = res.WriteToYAML(jsonData.FileLocation)
+		} else {
+			log.Println("File::JSON")
+			log.Println(jsonData.FileLocation)
+			err = res.WriteToJSON(jsonData.FileLocation)
+		}
+
 	default:
 		fmt.Println("EndpointType::NIL")
 	}

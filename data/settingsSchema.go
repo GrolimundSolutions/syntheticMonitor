@@ -10,6 +10,7 @@ type SyntheticSettings struct {
 	EndpointTokenValue string          `json:"EndpointTokenValue"`
 	EndpointPath       string          `json:"EndpointPath"`
 	FileLocation       string          `json:"FileLocation"`
+	FileType           string          `json:"FileType"`
 	SyntheticUrls      []SyntheticUrls `json:"SyntheticUrls"`
 }
 
