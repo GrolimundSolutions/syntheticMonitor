@@ -3,6 +3,7 @@ package pkg
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"github.com/ghodss/yaml"
@@ -10,6 +11,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 // Results declare a Interface
@@ -56,8 +58,11 @@ func (r Result) WriteToYAML(path string) error {
 // WriteToJSON save the results to a json file
 func (r Result) WriteToJSON(path string) error {
 	filePath := path
+	_time := time.Now()
+	filename := fmt.Sprintf("%s.json", _time.Format("2006-01-02_15-04-05"))
+	log.Println("Filename:::", filename)
 	// Write struct to JSON file
-	file, err := os.OpenFile(filePath, os.O_CREATE, os.ModePerm)
+	file, err := os.OpenFile(filePath+filename, os.O_CREATE, os.ModePerm)
 	if err != nil {
 		return err
 	}

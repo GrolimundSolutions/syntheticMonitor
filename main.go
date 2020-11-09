@@ -90,7 +90,9 @@ func main() {
 			log.Fatalln(err.Error())
 		}
 	case "File":
-		fmt.Println("EndpointType::File")
+		log.Println("File")
+		log.Println(jsonData.FileLocation)
+		err = res.WriteToJSON(jsonData.FileLocation)
 	default:
 		fmt.Println("EndpointType::NIL")
 	}
