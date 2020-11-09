@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"github.com/ghodss/yaml"
 	"io/ioutil"
 	"log"
@@ -15,7 +16,7 @@ import (
 type Results interface {
 	WriteToYAML(string) error
 	WriteToJSON(string) error
-	SendToHTTP(string) error
+	SendToHTTP(settings *data.SyntheticSettings) error
 }
 
 // Result type declare for the Interface
@@ -75,13 +76,22 @@ func (r Result) WriteToJSON(path string) error {
 }
 
 // SendToHTTP send the results to a url
-func (r Result) SendToHTTP(url string) error {
+func (r Result) SendToHTTP(settings *data.SyntheticSettings) error {
+	client := &http.Client{}
+
+	url, err := util.UrlBuilder(settings.EndpointURL, settings.EndpointPort, settings.EndpointPath)
 	requestBody, err := json.Marshal(r)
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
 
-	resp, err := http.Post("http://localhost:8080", "application/json", bytes.NewBuffer(requestBody))
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer(requestBody))
+	if err != nil {
+		log.Fatalln(err.Error())
+	}
+	req.Header.Add(settings.EndpointTokenKey, settings.EndpointTokenValue)
+
+	resp, err := client.Do(req)
 	if err != nil {
 		log.Fatalln(err.Error())
 	}

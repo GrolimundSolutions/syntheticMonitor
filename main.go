@@ -81,11 +81,18 @@ func main() {
 	}
 	fmt.Println(resObj)
 
-	var res pkg.Results
-	res = pkg.Result(resObj)
-	err = res.SendToHTTP("test.yaml")
-	if err != nil {
-		log.Fatalln(err.Error())
+	res := pkg.Result(resObj)
+
+	switch jsonData.EndpointType {
+	case "URL":
+		err = res.SendToHTTP(&jsonData)
+		if err != nil {
+			log.Fatalln(err.Error())
+		}
+	case "File":
+		fmt.Println("EndpointType::File")
+	default:
+		fmt.Println("EndpointType::NIL")
 	}
 
 }
