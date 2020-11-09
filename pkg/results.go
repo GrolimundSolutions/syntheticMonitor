@@ -83,7 +83,7 @@ func (r Result) WriteToJSON(path string) error {
 func (r Result) SendToHTTP(settings *data.SyntheticSettings) error {
 	client := &http.Client{}
 
-	url, err := util.UrlBuilder(settings.EndpointURL, settings.EndpointPort, settings.EndpointPath)
+	url, err := util.URLBuilder(settings.EndpointURL, settings.EndpointPort, settings.EndpointPath)
 	requestBody, err := json.Marshal(r)
 	if err != nil {
 		log.Fatalln(err.Error())
