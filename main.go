@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
+	"github.com/GrolimundSolutions/syntheticMonitor/pkg"
 	"github.com/GrolimundSolutions/syntheticMonitor/reader"
 	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"github.com/GrolimundSolutions/syntheticMonitor/writer"
@@ -79,4 +80,28 @@ func main() {
 		resObj.ResponseObject = append(resObj.ResponseObject, retItem)
 	}
 	fmt.Println(resObj)
+
+	res := pkg.Result(resObj)
+
+	switch jsonData.EndpointType {
+	case "URL":
+		err = res.SendToHTTP(&jsonData)
+		if err != nil {
+			log.Fatalln(err.Error())
+		}
+	case "File":
+		if jsonData.FileType == "yaml" {
+			log.Println("File::YAML")
+			log.Println(jsonData.FileLocation)
+			err = res.WriteToYAML(jsonData.FileLocation)
+		} else {
+			log.Println("File::JSON")
+			log.Println(jsonData.FileLocation)
+			err = res.WriteToJSON(jsonData.FileLocation)
+		}
+
+	default:
+		fmt.Println("EndpointType::NIL")
+	}
+
 }
