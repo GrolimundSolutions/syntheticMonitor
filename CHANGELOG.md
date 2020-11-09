@@ -2,6 +2,10 @@
 ## [Unreleased]
 
 ### Features
+- finishing Method write to YAML
+- finishing Method write to JSON
+- finishing Method send to HTTP
+- Add results Interaface Now you can: * Save the result as json * Save the result as yaml * send the result to http
 - Add results Interaface Now you can: * Save the result as json * Save the result as yaml * send the result to http
 - update CHANGELOG.md
 - update README.md
