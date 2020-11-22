@@ -10,6 +10,7 @@
   <a href="#"> <img src="https://img.shields.io/badge/Made%20with-Go-1f425f.svg" alt="Go"></a>
   <a href="https://github.com/GrolimundSolutions/syntheticMonitor/blob/master/LICENSE"> <img src="https://img.shields.io/github/license/GrolimundSolutions/SyntheticMonitor.svg" alt="Go"></a>
   <a href=""> <img src="https://img.shields.io/github/commits-since/GrolimundSolutions/SyntheticMonitor/latest" alt="Go"></a>
+  <a href="https://houndci.com"><img src="https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg" alt="Reviewed by Hound"></a></p>
 </p>
 
 <hr>
@@ -75,4 +76,78 @@ Settings:
 }
 ```
 
+Eine Musterdatei wird automatisch beim starten der Anwendung angelegt
+> Windows: \ProgramData\SyntheticMonitor\urlList.json \
+> Linux: /etc/syntheticmonitor/urlList.json
 
+Das Ergebniss kann als `json` `ymal` oder per HTTP POST Request gesendet werden.
+
+Hier ein paar Settings Beispiele: \
+
+Speichern als `yaml`
+```json
+{
+	"Location": "Swiss",
+	"EndpointType": "File",
+	"FileType": "yaml",
+	"FileLocation": "C:\\Users\\Muster\\syntheticMonitor\\results",
+	"SyntheticUrls": [
+		{
+			"URL": "https://google.ch",
+			"Name": "Google Swiss",
+			"Expect": "In Progress"
+		},
+		{
+			"URL": "https://www.shodan.io/",
+			"Name": "shodan",
+			"Expect": "In Progress"
+		}
+	]
+}
+```
+
+Speichern als `json`
+```json
+{
+	"Location": "Swiss",
+	"EndpointType": "File",
+	"FileType": "json",
+	"FileLocation": "C:\\Users\\Muster\\syntheticMonitor\\results",
+	"SyntheticUrls": [
+		{
+			"URL": "https://google.ch",
+			"Name": "Google Swiss",
+			"Expect": "In Progress"
+		},
+		{
+			"URL": "https://www.shodan.io/",
+			"Name": "shodan",
+			"Expect": "In Progress"
+		}
+	]
+}
+```
+
+Speichern via POST-Request
+```json
+{
+	"Location": "Swiss",
+	"EndpointType": "URL",
+	"EndpointURL": "https://meineurl.ch/muster",
+	"EndpointPort": 443,
+	"EndpointTokenKey": "Token",
+	"EndpointTokenValue": "meinsecrettoken",
+	"SyntheticUrls": [
+		{
+			"URL": "https://google.ch",
+			"Name": "Google Swiss",
+			"Expect": "In Progress"
+		},
+		{
+			"URL": "https://www.shodan.io/",
+			"Name": "shodan",
+			"Expect": "In Progress"
+		}
+	]
+}
+```
