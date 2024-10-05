@@ -4,7 +4,6 @@ import (
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"github.com/tcnksm/go-httpstat"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"runtime"
@@ -35,7 +34,7 @@ func SyntheticCall(urlObject data.SyntheticUrls, channel chan data.ResponseObjec
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	if _, err := io.Copy(ioutil.Discard, res.Body); err != nil {
+	if _, err := io.Copy(io.Discard, res.Body); err != nil {
 		log.Fatal(err)
 	}
 	defer res.Body.Close()

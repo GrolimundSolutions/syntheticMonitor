@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"github.com/GrolimundSolutions/syntheticMonitor/util"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 )
@@ -33,7 +33,7 @@ func ReadFromJSON() (data.SyntheticSettings, error) {
 		}
 	}()
 	// read our opened jsonFile as a byte array.
-	byteValue, err := ioutil.ReadAll(jsonFile)
+	byteValue, err := io.ReadAll(jsonFile)
 	if err != nil {
 		log.Fatal(err)
 		return synset, err

@@ -1,6 +1,6 @@
 module github.com/GrolimundSolutions/syntheticMonitor
 
-go 1.21
+go 1.23
 
 require (
 	github.com/ghodss/yaml v1.0.0
