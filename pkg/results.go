@@ -7,7 +7,7 @@ import (
 	"github.com/GrolimundSolutions/syntheticMonitor/data"
 	"github.com/GrolimundSolutions/syntheticMonitor/util"
 	"github.com/ghodss/yaml"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -105,7 +105,7 @@ func (r Result) SendToHTTP(settings *data.SyntheticSettings) error {
 			log.Fatalln(err.Error())
 		}
 	}()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
